@@ -28,7 +28,7 @@ export const createPost = async (req, res) => {
 };
 
 /* READ */
-export const getFeedPosts = async (req, req) => {
+export const getFeedPosts = async (req, res) => {
   try {
     const feedPosts = await Post.find();
     res.status(200).json(feedPosts);
@@ -39,7 +39,7 @@ export const getFeedPosts = async (req, req) => {
   }
 };
 
-export const getUserPosts = async (req, req) => {
+export const getUserPosts = async (req, res) => {
   try {
     const { userId } = req.params;
     const userPosts = await Post.find({ userId: userId });
