@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   mode: "light",
-  user: null,
+  user: { firstName: "Anton", lastName: "Nenw" },
   token: null,
   posts: [],
 };
@@ -34,7 +34,7 @@ export const authSlice = createSlice({
       state.posts = action.payload.posts;
     },
     setPost: (state, action) => {
-      const updatedPosts = state.posts.map((post) => {
+      const updatedPosts = state.posts?.map((post) => {
         if (post._id === action.payload.post_id) {
           return action.payload.post;
         }
