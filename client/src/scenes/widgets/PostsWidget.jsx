@@ -3,13 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPost, setPosts } from "state";
 import PostWidget from "./PostWidget";
 
-const PostsWidget = ({ userId, isProfile = false }) => {
-  console.log("z");
+const PostsWidget = ({ userId, isProfile = false }) => {=
   const dispatch = useDispatch();
   const posts = useSelector((state) => state?.posts);
   const token = useSelector((state) => state.token);
-  console.log(posts);
-  console.log(posts);
   const getAllPosts = async () => {
     const resp = await fetch(`http://localhost:3001/posts`, {
       method: "GET",
@@ -31,7 +28,6 @@ const PostsWidget = ({ userId, isProfile = false }) => {
       if (isProfile) {
         getUserPosts();
       } else {
-        console.log("a");
         getAllPosts();
       }
     } catch (err) {

@@ -123,7 +123,6 @@ const PostWidget = ({
             );
             const updatedPost = await resp.json();
             dispatch(setPost({ post: updatedPost }));
-            console.log(updatedPost);
             e.target.comment.value = "";
           }}
         >

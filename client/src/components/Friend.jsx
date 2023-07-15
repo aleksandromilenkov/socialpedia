@@ -37,7 +37,6 @@ const Friend = ({ friendId, name, subtitle, userPicturePath, postId }) => {
     dispatch(setFriends({ friends: friends }));
   };
   const deletePostNow = async () => {
-    console.log(postId);
     const resp = await fetch(`http://localhost:3001/posts/${postId}/delete`, {
       method: "DELETE",
     });
