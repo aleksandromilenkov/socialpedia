@@ -34,7 +34,6 @@ const PostWidget = ({
   const palette = useTheme().palette;
   const primary = palette.primary.main;
   const main = palette.neutral.main;
-
   const patchLike = async () => {
     const resp = await fetch(`http://localhost:3001/posts/${postId}/like`, {
       method: "PATCH",
@@ -54,6 +53,7 @@ const PostWidget = ({
         name={name}
         subtitle={location}
         userPicturePath={userPicturePath}
+        postId={postId}
       />
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}
@@ -93,7 +93,7 @@ const PostWidget = ({
       {isComments && (
         <Box mt="0.5rem">
           {comments.map((comment, idx) => (
-            <Box key={`${name}-idx`}>
+            <Box key={`${idx}-idx`}>
               <Divider />
               <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
                 {comment}
@@ -108,7 +108,8 @@ const PostWidget = ({
           onSubmit={async (e) => {
             e.preventDefault();
             const comment = e.target.comment.value;
-            const body = { comment: comment, postId, postUserId, user };
+            if (!comment) return;
+            const body = { text: comment };
             const resp = await fetch(
               `http://localhost:3001/posts/${postId}/comment`,
               {
@@ -120,16 +121,30 @@ const PostWidget = ({
                 body: JSON.stringify(body),
               }
             );
-            console.log(resp);
+            const updatedPost = await resp.json();
+            dispatch(setPost({ post: updatedPost }));
+            console.log(updatedPost);
+            e.target.comment.value = "";
           }}
         >
-          <textarea
+          <input
+            type="text"
             id="comment"
             name="comment"
             placeholder="type smth"
-            style={{ width: "450px" }}
-          ></textarea>
-          <button>Comment</button>
+            style={{ width: "450px", margin: "0.5rem 0", padding: "0.4rem" }}
+          ></input>
+          <button
+            style={{
+              backgroundColor: primary,
+              padding: "0.4rem",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            Comment
+          </button>
         </form>
       </Box>
     </WidgetWrapper>

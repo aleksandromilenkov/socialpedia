@@ -34,6 +34,7 @@ export const authSlice = createSlice({
       state.posts = action.payload.posts;
     },
     setPost: (state, action) => {
+      console.log(action.payload.post);
       const updatedPosts = state.posts?.map((post) => {
         if (post._id === action.payload.post._id) {
           return action.payload.post;
@@ -42,9 +43,23 @@ export const authSlice = createSlice({
       });
       state.posts = updatedPosts;
     },
+    deletePost: (state, action) => {
+      console.log(action.payload.id);
+      const updatedPosts = state.posts?.filter(
+        (post) => post._id !== action.payload.id
+      );
+      state.posts = updatedPosts;
+    },
   },
 });
 
-export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } =
-  authSlice.actions;
+export const {
+  setMode,
+  setLogin,
+  setLogout,
+  setFriends,
+  setPosts,
+  setPost,
+  deletePost,
+} = authSlice.actions;
 export default authSlice.reducer;
