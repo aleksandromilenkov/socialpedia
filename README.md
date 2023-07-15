@@ -3,7 +3,8 @@
 I made a fullstack MERN application for a social media platform called "Sociopedia".  
 Here you can Register an account, login, create posts with Images or without images, Add or remove friends, Like, Comment on other posts, change the overall theme of the page and more.  
 For the frontend I'm using: React.js,  Material UI Framerowrk for styling, Formik for making easier forms, react-router-dom v6 for navigating, react-redux and redux persists for my store and other smaller packages.  
-For the backend I'm using: Node.js & Express.js, jsonwebtoken to make the authentication with tokens, I'm protecting the routes,  bcrypt to protect the passwords, mongo Db and Mongoose for the database and other smaller packages. 
+For the backend I'm using: Node.js & Express.js, jsonwebtoken to make the authentication with tokens, I'm protecting the routes,  bcrypt to protect the passwords, mongo Db and Mongoose for the database and other smaller packages.  
+The app is fully responsive
 
 ## Home Page:  
 ![sociopedia_home](https://github.com/aleksandromilenkov/natoursApi/assets/64156983/e416b9d7-1a4c-440c-8149-91e70bf6e1c0)
