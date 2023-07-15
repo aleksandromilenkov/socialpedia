@@ -4,7 +4,7 @@ import User from "../models/user.js";
 /* CREATE */
 export const createPost = async (req, res) => {
   try {
-    const { userId, description, picturePath } = req.body;
+    const { userId, description, picturePath, picture } = req.body;
     const user = await User.findById(userId);
     const newPost = new Post({
       userId,
@@ -13,7 +13,7 @@ export const createPost = async (req, res) => {
       location: user.location,
       description,
       userPicturePath: user.picturePath,
-      picturePath,
+      picturePath: picturePath,
       likes: {},
       comments: [],
     });
@@ -44,6 +44,32 @@ export const getUserPosts = async (req, res) => {
     const { userId } = req.params;
     const userPosts = await Post.find({ userId: userId });
     res.status(200).json(userPosts);
+  } catch (err) {
+    res.status(404).json({
+      msg: err.message,
+    });
+  }
+};
+
+export const createComment = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { postUserId, user, text } = req.body;
+    const updatedPost = await Post.findByIdAndUpdate(id, {
+      comments: [...updatedPost.comments, text],
+    });
+    res.status(200).json(updatedPost);
+  } catch (err) {
+    res.status(404).json({
+      msg: err.message,
+    });
+  }
+};
+
+export const getSmth = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json(users);
   } catch (err) {
     res.status(404).json({
       msg: err.message,
