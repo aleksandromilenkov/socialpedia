@@ -44,7 +44,7 @@ npm run start
 ```
 npm run start
 ```
-
+Now go to localhost:3000 and you will see the app.
 ## Usage
 Use this app for whatever you like.
 
