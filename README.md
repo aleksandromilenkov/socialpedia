@@ -7,15 +7,33 @@ For the backend I'm using: Node.js & Express.js, jsonwebtoken to make the authen
 The app is fully responsive
 
 ## Home Page:  
-![sociopedia_home](https://github.com/aleksandromilenkov/natoursApi/assets/64156983/e416b9d7-1a4c-440c-8149-91e70bf6e1c0)
+
+![sociopedia](https://github.com/aleksandromilenkov/memoryGame/assets/64156983/4b87f61c-fe18-45cc-b10c-755fc82194d3)
 
 ## Profile page:  
-![sociopedia_profile](https://github.com/aleksandromilenkov/natoursApi/assets/64156983/7497a001-5118-4855-a23f-03de1e122e3a)
+
+![sociopediaProfile](https://github.com/aleksandromilenkov/memoryGame/assets/64156983/20cbcbb8-179b-4084-b807-ecf7a1e21a08)
+
+## Other User's profile page:  
+
+![sociopediaOtherProfile](https://github.com/aleksandromilenkov/memoryGame/assets/64156983/5aa0c9ca-ec3d-40d2-baf4-9920e6efa2ca)
 
 
-## Login/Sign up page:  
+## Simple User's post example:  
+![sociopediaPostExample](https://github.com/aleksandromilenkov/memoryGame/assets/64156983/8a746368-4fe4-476c-b190-a96e1b7ee7c3)
 
-![sociopedia_login](https://github.com/aleksandromilenkov/natoursApi/assets/64156983/f5479ead-ab02-4345-9f06-53071513584e)
+
+## Socialpedia with the Dark Mode active:  
+![sociopediaDark](https://github.com/aleksandromilenkov/memoryGame/assets/64156983/84bfae7e-af64-4765-af0a-b7df5c8d8218)
+
+
+## Login page:  
+
+![sociopediaLogin](https://github.com/aleksandromilenkov/memoryGame/assets/64156983/1206f36c-1752-4b87-a050-cded9e7d6fb8)
+
+## Signup page:  
+
+![sociopediaSignup](https://github.com/aleksandromilenkov/memoryGame/assets/64156983/813c6b6a-5b03-4d6e-a07d-7890c5630096)
 
 
 ## Installation
